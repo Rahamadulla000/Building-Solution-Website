@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Multicolor gradient ring -->
+    <linearGradient id="rainbowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="25%" stop-color="#38BDF8" />
+      <stop offset="45%" stop-color="#FACC15" />
+      <stop offset="65%" stop-color="#F97316" />
+      <stop offset="85%" stop-color="#EC4899" />
+      <stop offset="100%" stop-color="#D946EF" />
+    </linearGradient>
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Outer Gradient Border Circle -->
+  <circle cx="250" cy="250" r="235" fill="none" stroke="url(#rainbowGradient)" stroke-width="16" />
+  
+  <!-- Outer White Margin Gap & Inner White Background -->
+  <circle cx="250" cy="250" r="225" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4" />
+
+  <!-- GRAPHIC ILLUSTRATION (Top Half) -->
+  <g transform="translate(0, 5)">
+    <!-- Sun (Top Left) -->
+    <g transform="translate(192, 82)">
+      <circle cx="0" cy="0" r="13" fill="#F59E0B" />
+      <!-- Sun Rays -->
+      <line x1="0" y1="-18" x2="0" y2="-23" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="13" y1="-13" x2="17" y2="-17" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="18" y1="0" x2="23" y2="0" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="13" y1="13" x2="17" y2="17" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="-13" y1="-13" x2="-17" y2="-17" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="-18" y1="0" x2="-23" y2="0" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+      <line x1="-13" y1="13" x2="-17" y2="17" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" />
+    </g>
+
+    <!-- Raindrops (Top Right) -->
+    <g transform="translate(290, 68)" stroke="#0284C7" stroke-width="3.5" stroke-linecap="round">
+      <line x1="0" y1="0" x2="-4" y2="10" />
+      <line x1="8" y1="0" x2="4" y2="10" />
+      <line x1="16" y1="0" x2="12" y2="10" />
+      <line x1="24" y1="0" x2="20" y2="10" />
+      <line x1="4" y1="14" x2="0" y2="24" />
+      <line x1="12" y1="14" x2="8" y2="24" />
+      <line x1="20" y1="14" x2="16" y2="24" />
+    </g>
+
+    <!-- Umbrella Canopy -->
+    <path d="M 172 165 C 172 105, 328 105, 328 165 C 300 155, 275 160, 250 152 C 225 160, 200 155, 172 165 Z" fill="#0369A1" filter="url(#subtleShadow)" />
+    <!-- Umbrella Tip/Spire -->
+    <polygon points="250,86 246,104 254,104" fill="#0369A1" />
+    <!-- Umbrella Segment Rib Lines -->
+    <path d="M 250 104 C 235 125, 210 145, 195 162" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" />
+    <path d="M 250 104 C 265 125, 290 145, 305 162" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" />
+
+    <!-- Houses / Buildings Silhouette Under Umbrella -->
+    <g fill="#0284C7">
+      <!-- Main Center Roof & House -->
+      <polygon points="250,140 190,185 200,185 200,205 300,205 300,185 310,185" fill="#0284C7" />
+      <!-- Inner Roof Highlight / Overlap -->
+      <polygon points="250,142 205,180 295,180" fill="#0369A1" />
+      
+      <!-- Right Secondary Roof -->
+      <polygon points="280,165 240,195 320,195" fill="#0284C7" />
+      <polygon points="280,168 250,192 310,192" fill="#0C4A6E" />
+      
+      <!-- House Details (Windows & Doors) -->
+      <!-- Center House Windows -->
+      <rect x="235" y="188" width="8" height="10" fill="#FFFFFF" rx="1" />
+      <rect x="257" y="188" width="8" height="10" fill="#FFFFFF" rx="1" />
+      <!-- Right House Window -->
+      <rect x="285" y="180" width="7" height="8" fill="#FFFFFF" rx="1" />
+    </g>
+  </g>
+
+  <!-- TYPOGRAPHY (Bottom Half) -->
+  <!-- "HI-ONE-TECH" Brand Name -->
+  <text 
+    x="250" 
+    y="282" 
+    font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" 
+    font-weight="900" 
+    font-size="44" 
+    fill="#0F3866" 
+    text-anchor="middle" 
+    letter-spacing="3"
+  >
+    HI-ONE-TECH
+  </text>
+
+  <!-- "BUILDING SOLUTIONS" Tagline -->
+  <text 
+    x="250" 
+    y="350" 
+    font-family="'Outfit', 'Inter', 'Segoe UI', sans-serif" 
+    font-weight="800" 
+    font-size="29" 
+    fill="#DC2626" 
+    text-anchor="middle" 
+    letter-spacing="3"
+  >
+    BUILDING SOLUTIONS
+  </text>
+</svg>
