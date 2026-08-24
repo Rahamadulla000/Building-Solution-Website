@@ -1,50 +1,54 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
 import { useScrollSpy } from './hooks/useScrollSpy';
 import { Header } from './components/sections/Header';
-import { Hero } from './components/sections/Hero';
-import { TrustStats } from './components/sections/TrustStats';
-import { Services } from './components/sections/Services';
-import { WhyChooseUs } from './components/sections/WhyChooseUs';
-import { Gallery } from './components/sections/Gallery';
-import { Testimonials } from './components/sections/Testimonials';
-import { ContactForm } from './components/sections/ContactForm';
 import { Footer } from './components/sections/Footer';
 import { FloatingWhatsApp } from './components/sections/FloatingWhatsApp';
 import { Modal } from './components/ui/Modal';
 import { Button } from './components/ui/Button';
+import { HomePage } from './pages/HomePage';
+import { ContactPage } from './pages/ContactPage';
 
-export function App() {
+function AppContent() {
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('Terrace Waterproofing');
+  const navigate = useNavigate();
 
   const activeSection = useScrollSpy(['home', 'services', 'why-us', 'projects', 'reviews', 'contact'], 120);
 
   const handleSelectService = (serviceTitle) => {
     setSelectedService(serviceTitle);
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    navigate('/contact');
   };
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      {/* 1. Header Navigation */}
+      {/* 1. Global Header Navigation */}
       <Header
         onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
         activeSection={activeSection}
       />
 
-      {/* 2. Main Content Sections */}
-      <main style={{ flex: 1 }}>
-        <Hero onOpenQuoteModal={() => setIsQuoteModalOpen(true)} />
-        <TrustStats />
-        <Services onSelectService={handleSelectService} />
-        <WhyChooseUs />
-        <Gallery />
-        <Testimonials />
-        <ContactForm preselectedService={selectedService} />
-      </main>
+      {/* 2. Main Page Routes */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              onOpenQuoteModal={() => setIsQuoteModalOpen(true)}
+              onSelectService={handleSelectService}
+            />
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <ContactPage
+              preselectedService={selectedService}
+            />
+          }
+        />
+      </Routes>
 
       {/* 3. Global Footer */}
       <Footer />
@@ -106,6 +110,14 @@ export function App() {
         </form>
       </Modal>
     </div>
+  );
+}
+
+export function App() {
+  return (
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 

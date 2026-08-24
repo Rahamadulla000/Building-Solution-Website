@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import { siteConfig } from '../../data/siteConfig';
 import { Logo } from '../ui/Logo';
@@ -22,7 +23,9 @@ export function Footer() {
           {/* Brand Info */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <Logo size={64} variant="badge" />
+              <Link to="/" aria-label="Home">
+                <Logo size={64} variant="badge" />
+              </Link>
             </div>
             <p style={{ fontSize: '14px', color: '#94A3B8', lineHeight: '1.6', marginBottom: '20px' }}>
               Premier waterproofing company providing guaranteed 100% leak-free solutions for residential, commercial, and industrial structures.
@@ -34,13 +37,13 @@ export function Footer() {
             <h4 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--color-secondary)', marginBottom: '16px' }}>
               Quick Navigation
             </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px', color: '#94A3B8' }}>
-              <a href="#home">Home</a>
-              <a href="#services">Waterproofing Services</a>
-              <a href="#why-us">Why Choose Us</a>
-              <a href="#projects">Project Gallery</a>
-              <a href="#reviews">Customer Reviews</a>
-              <a href="#contact">Get Free Quote</a>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '14px' }}>
+              <Link to="/" style={{ color: '#94A3B8', textDecoration: 'none' }}>Home</Link>
+              <a href="/#services" style={{ color: '#94A3B8', textDecoration: 'none' }}>Waterproofing Services</a>
+              <a href="/#why-us" style={{ color: '#94A3B8', textDecoration: 'none' }}>Why Choose Us</a>
+              <a href="/#projects" style={{ color: '#94A3B8', textDecoration: 'none' }}>Project Gallery</a>
+              <a href="/#reviews" style={{ color: '#94A3B8', textDecoration: 'none' }}>Customer Reviews</a>
+              <Link to="/contact" style={{ color: '#94A3B8', textDecoration: 'none' }}>Get Free Quote / Contact</Link>
             </div>
           </div>
 
