@@ -12,7 +12,7 @@ export function HomePage({ onOpenQuoteModal, onSelectService }) {
       <Hero onOpenQuoteModal={onOpenQuoteModal} />
       <TrustStats />
       <Services onSelectService={onSelectService} />
-      <WhyChooseUs />
+      <WhyChooseUs onOpenQuoteModal={onOpenQuoteModal} />
       <Gallery />
       <Testimonials />
     </main>
